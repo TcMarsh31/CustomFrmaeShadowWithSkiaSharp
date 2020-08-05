@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CustomFrameWithSkia.Views.ShadowWithGradientBackground"
+             xmlns:local="clr-namespace:CustomFrameWithSkia.CustomRenderer"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms">
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+        <Grid>
+        <skia:SKCanvasView PaintSurface="OnCanvasViewPaintSurface"></skia:SKCanvasView>
+
+
+    <local:ShadowFrame OffsetX="{Binding OffsetX}" OffsetY="{Binding OffsetY}" BlurX="{Binding BlurX}" BlurY="{Binding BlurY}"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HeightRequest="200" WidthRequest="200" ShadowColor="Black" Radius="20">
+            <local:ShadowFrame.Content>
+                <Frame CornerRadius="8" Padding="0" IsClippedToBounds="True" HasShadow="False"  >
+                <Image Aspect="AspectFill" Source="CAT.jpg"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Image>
+                    </Frame>
+            </local:ShadowFrame.Content>
+        </local:ShadowFrame>
+
+        
+            </Grid>
+        <StackLayout VerticalOptions="StartAndExpand">
+        <Label Text="OffsetX"  Margin="10"></Label>
+        <Slider x:Name="OffsetXSlider" Minimum="-20"
+                Maximum="20" ValueChanged="OffsetXSlider_ValueChanged"> </Slider>
+            <Label Text="OffsetY"  Margin="10"></Label>
+            <Slider x:Name="OffsetYSlider" Minimum="-20"
+                Maximum="20" ValueChanged="OffsetYSlider_ValueChanged"> </Slider>
+            <Label Text="BlurX"  Margin="10"></Label>
+            <Slider x:Name="SigmaXSlider" 
+                Maximum="20" ValueChanged="SigmaXSlider_ValueChanged"> </Slider>
+            <Label Text="BlurY"  Margin="10"></Label>
+            <Slider x:Name="SigmaYSlider"
+                Maximum="20" ValueChanged="SigmaYSlider_ValueChanged"> </Slider>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

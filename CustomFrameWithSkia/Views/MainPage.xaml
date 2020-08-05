@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="Beige"
+             x:Class="CustomFrameWithSkia.Views.MainPage"
+             xmlns:local="clr-namespace:CustomFrameWithSkia.CustomRenderer">
+    <StackLayout Spacing="0" BackgroundColor="LightBlue">
+        <!-- Place new controls here -->
+
+        <!-- do not use default background color property for this element-->
+        <local:ShadowFrame OffsetX="{Binding OffsetX}" OffsetY="{Binding OffsetY}" BlurX="{Binding BlurX}" BlurY="{Binding BlurY}"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HeightRequest="200" WidthRequest="200" ShadowColor="Gray" Radius="20">
+            <local:ShadowFrame.Content>
+                <StackLayout Margin="10">
+                    <Label Text="Test Label 1"></Label>
+                    <Label Text="Test Label 2"></Label>
+                    <Label Text="Test Label 3"></Label>
+                    <Label Text="Test Label 4"></Label>
+                    <Label Text="Test Label 5"></Label>
+                </StackLayout>
+            </local:ShadowFrame.Content>
+        </local:ShadowFrame>
+
+        <StackLayout VerticalOptions="StartAndExpand">
+        <Label Text="OffsetX"  Margin="10"></Label>
+        <Slider x:Name="OffsetXSlider" Minimum="-20"
+                Maximum="20" ValueChanged="OffsetXSlider_ValueChanged"> </Slider>
+            <Label Text="OffsetY"  Margin="10"></Label>
+            <Slider x:Name="OffsetYSlider" Minimum="-20"
+                Maximum="20" ValueChanged="OffsetYSlider_ValueChanged"> </Slider>
+            <Label Text="BlurX"  Margin="10"></Label>
+            <Slider x:Name="SigmaXSlider"
+                Maximum="20" ValueChanged="SigmaXSlider_ValueChanged"> </Slider>
+            <Label Text="BlurY"  Margin="10"></Label>
+           <Slider x:Name="SigmaYSlider"
+                Maximum="20" ValueChanged="SigmaYSlider_ValueChanged"> </Slider>
+            </StackLayout>
+    </StackLayout>
+</ContentPage>
