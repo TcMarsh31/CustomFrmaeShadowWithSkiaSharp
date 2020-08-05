@@ -12812,6 +12812,9 @@ namespace CustomFrameWithSkia.Droid
 			// aapt resource value: 0x7F0E00E6
 			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131624166;
 			
+			// aapt resource value: 0x7F0E01F9
+			public const int splashscreen = 2131624441;
+			
 			// aapt resource value: 0x7F0E00E7
 			public const int TextAppearance_AppCompat = 2131624167;
 			
